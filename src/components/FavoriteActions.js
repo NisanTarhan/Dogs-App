@@ -1,13 +1,13 @@
 import React from 'react';
-import {Button} from "reactstrap";
+import { Button } from "reactstrap";
 
-const FavoriteActions = (props) => {
+const FavoriteActions = ({ id, getStatus, toggle, loadingId }) => {
     return (
         <div>
             {
-                props.getStatus(props.id) ?
-                    <Button color="danger" onClick={() => {props.toggle(props.id)}}>Favorilerden Cikar</Button>
-                    : <Button color="primary" onClick={() => {props.toggle(props.id)}}>Favoriye Ekle</Button>
+                getStatus(id) ?
+                    <Button color="danger" disabled={id === loadingId} onClick={() => { toggle(id) }}>Favorilerden Cikar</Button>
+                    : <Button color="primary" disabled={id === loadingId} onClick={() => { toggle(id) }}>Favoriye Ekle</Button>
             }
         </div>
     );

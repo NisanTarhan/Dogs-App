@@ -1,21 +1,15 @@
-import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
 } from 'reactstrap';
-import navs from "./navs";
+import navs from "../navs";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +21,7 @@ const Header = () => {
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
-{/*                        {
+                        {
                             navs.map((route) => {
                                 return <NavItem key={route.path}>
                                     <NavLink>
@@ -37,8 +31,8 @@ const Header = () => {
                                     </NavLink>
                                 </NavItem>
                             })
-                        }*/}
-                        <NavItem>
+                        }
+                        {/* <NavItem>
                             <NavLink>
                                 <Link to="/">
                                     Anasayfa
@@ -58,12 +52,7 @@ const Header = () => {
                                     Goldens
                                 </Link>
                             </NavLink>
-                        </NavItem>
-
-
-
-
-
+                        </NavItem> */}
                     </Nav>
                 </Collapse>
             </Navbar>
